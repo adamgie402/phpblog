@@ -2,7 +2,8 @@
 <?php
     require('header.php');
 
-    $query = 'SELECT * FROM posts'; // treść zapytania sql
+    $query = 'SELECT * FROM posts ORDER BY created_at DESC'; // treść zapytania sql
+    
     $qresult = mysqli_query($connection, $query); // zapytanie do DB
     $posts = mysqli_fetch_all($qresult, MYSQLI_ASSOC); // konwersja odpowiedzi do tablicy asocjacyjnej
     mysqli_free_result($qresult); // zwalnianie pamięci zajętej przez odpowiedź z DB
@@ -12,7 +13,6 @@
 <article>
     <h1>Posty</h1>
     <hr>
-
     <?php foreach ($posts as $post): ?>
         <h3>Title: <?php echo $post['title']; ?></h3>
         <h5>Date: <?php echo $post['created_at'] . ", Author: " . $post['author']; ?></h5>
