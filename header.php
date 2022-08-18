@@ -8,7 +8,8 @@
     <style>
         body { background-color: silver;}
         article { max-width: 500px; margin: 0 auto;}
-        textarea, input { margin: 10px 0; padding: 7px; width: 100%; }
+        textarea, input { margin: 10px 0; padding: 7px; width: 100%; font-family: serif; font-size: 1.2em; }
+        textarea { min-height: 200px;}
     </style>
 </head>
 
