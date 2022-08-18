@@ -11,7 +11,7 @@
 ?>
 
 <article>
-    <h1>Posty</h1>
+    <h1>Post list</h1>
     <hr>
     <?php foreach ($posts as $post): ?>
         <h3>Title: <?php echo $post['title']; ?></h3>

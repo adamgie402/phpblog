@@ -9,14 +9,14 @@
         $query = "INSERT INTO posts(author,title,body) VALUES ('$author','$title','$body')";
 
         if ($author && $title && $body) {
-            if (mysqli_query($connection, $query)) {
+            if (mysqli_query($connection, $query)) { // do query and if is done go to specific file
                 header('Location: ' . ROOT_URL . '');
             } else {
                 echo 'ERROR: ' . mysqli_error($connection);
             }
+        } else {
+            echo 'Please complete a form...';
         }
-
-
     }
 
 ?>

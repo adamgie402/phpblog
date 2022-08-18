@@ -1,9 +1,5 @@
 <?php require('header.php'); ?>
 
-
-
-
-
 <?php
     $post_id = htmlspecialchars($_GET['id']);
 
@@ -14,15 +10,13 @@
         
         $query = "UPDATE posts SET title = '$title', author = '$author', body = '$body' WHERE id = $post_id";
 
-        if (mysqli_query($connection, $query)) { // if query is done go to specific file
+        if (mysqli_query($connection, $query)) { // do query and if is done go to specific file
             header('Location: ' . ROOT_URL . 'post.php?id=' . $post_id);
         } else {
             echo 'ERROR: ' . mysqli_error($connection);
         }
     }
-?>
-
-<?php    
+  
     
     $query = 'SELECT * FROM posts WHERE id = ' . $post_id; // treść zapytania sql
     $qresult = mysqli_query($connection, $query); // zapytanie do DB

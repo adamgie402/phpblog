@@ -16,8 +16,14 @@
     <h5>Date: <?php echo $post['created_at'] . ", Author: " . $post['author']; ?></h5>
     <p><?php echo $post['body'] ; ?></p>
     <hr>
-    <a href="<?php echo ROOT_URL;?>">back to posts</a>
-    <a href="<?php echo ROOT_URL;?>editpost.php?id=<?php echo $post_id ?>">edit post</a>
+    <a href="<?php echo ROOT_URL;?>"><button class="btn">back to posts</button></a>
+    <a href="<?php echo ROOT_URL;?>editpost.php?id=<?php echo $post_id ?>"><button class="btn">edit post</button></a>
+    
+    <!-- delete !!! for security reason post_id to delete is sent by form and input hidden -->
+    <form class="btn" method="POST" action="<?php echo ROOT_URL ?>deletepost.php">
+        <input type="hidden" name="delete_id" value="<?php echo $post_id ?>">
+        <input type="submit" name="submit" value="delete post" class="btn">
+    </form>    
 </article>
 
 <?php include('footer.php'); ?>
