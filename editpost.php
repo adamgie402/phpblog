@@ -11,13 +11,12 @@
         $query = "UPDATE posts SET title = '$title', author = '$author', body = '$body' WHERE id = $post_id";
 
         if (mysqli_query($connection, $query)) { // do query and if is done go to specific file
-            header('Location: ' . ROOT_URL . 'post.php?id=' . $post_id);
+            header('Location: ' . ROOT_URL . 'showpost.php?id=' . $post_id);
         } else {
             echo 'ERROR: ' . mysqli_error($connection);
         }
     }
-  
-    
+
     $query = 'SELECT * FROM posts WHERE id = ' . $post_id; // treść zapytania sql
     $qresult = mysqli_query($connection, $query); // zapytanie do DB
     $post = mysqli_fetch_assoc($qresult); // konwersja pojedyńczej odpowiedzi do tablicy asocjacyjnej
